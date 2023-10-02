@@ -10,14 +10,17 @@ router = Router()
 
 
 # Стартовый  хэндлер
-@router.message(Command("start"))
+@router.message(Command("start", "menu"))
 async def start_handler(msg: Message):
     await msg.answer(text.greet.format(name=msg.from_user.full_name), reply_markup=kb.menu)
+    await msg.delete()
 
 
 @router.callback_query(F.data.startswith('tariffs'))
 async def tariffs_handler(callback: types.CallbackQuery):
     await callback.message.answer(text.tariffs, reply_markup=kb.tariffs_kb)
+
+
 
 
 @router.callback_query(F.data.startswith('payment'))
