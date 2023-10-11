@@ -1,2 +1,2 @@
 #Токен бота
-TOKEN = '6147694776:AAEpPG7Z5C5YzR7ipZMcBW9CNYt5QvCxqqM'
+TOKEN = '******************M'
